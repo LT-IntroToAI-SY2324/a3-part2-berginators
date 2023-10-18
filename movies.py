@@ -1,28 +1,17 @@
-# the content of the movie database is taken from the textbook Concrete Abstractions: An
-# Introduction to Computer Science Using Scheme, by Max Hailperin, Barbara Kaiser, and
-# Karl Knight, Copyright (c) 1998 by the authors. Full text is available for free at
-# http://www.gustavus.edu/+max/concrete-abstractions.html
-
-# the Scheme file, Revision 1.3 as of 2005/12/20 14:09:37, has been reformated for
-# Python. The original file is available as
-# http://www.gustavus.edu/academics/mcs/max/concabs/code/movie.scm
-
-# list of tuples w/ following format (the first tuple in the list is also annotated):
-# each tuple contains title, director, year and actors/actresses
-# `[(title, director, year, [actress_one, actor_two, ...]), ...]`
 from typing import List, Tuple
 
-movie_db: List[Tuple[str, str, int, List[str]]] = [
+movie_db: List[Tuple[str, str, int, List[str], str]] = [
     (
-        "amarcord",  # title
-        "federico fellini",  # director
-        1974,  # year
+        "amarcord",
+        "federico fellini",
+        1974,
         [
             "magali noel",
             "bruno zanin",
             "pupella maggio",
             "armando drancia",
-        ],  # actors/actresses
+        ],
+        "Drama",
     ),
     (
         "the big easy",
@@ -36,6 +25,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "john goodman",
             "charles ludlam",
         ],
+        "Crime",
     ),
     (
         "boyz n the hood",
@@ -48,6 +38,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "tyra ferrell",
             "morris chestnut",
         ],
+        "Drama",
     ),
     (
         "dead again",
@@ -60,18 +51,21 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "derek jacobi",
             "hanna schygulla",
         ],
+        "Mystery",
     ),
     (
         "the godfather",
         "francis ford coppola",
         1972,
         ["marlon brando", "al pacino", "james caan", "robert duvall", "diane keaton"],
+        "Crime",
     ),
     (
         "an american in paris",
         "vincente minnelli",
         1952,
         ["gene kelley", "leslie caron", "oscar levant", "nina foch", "george guetary"],
+        "Musical",
     ),
     (
         "casablanca",
@@ -88,6 +82,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "conrad veidt",
             "dooley wilson",
         ],
+        "Drama",
     ),
     (
         "citizen kane",
@@ -102,6 +97,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "agnes moorehead",
             "ruth warrick",
         ],
+        "Drama",
     ),
     (
         "gone with the wind",
@@ -115,6 +111,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "hattie mcdaniel",
             "butterfly mcqueen",
         ],
+        "Drama",
     ),
     (
         "lawrence of arabia",
@@ -132,6 +129,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "arthur kennedy",
             "donald wolfit",
         ],
+        "Adventure",
     ),
     (
         "the manchurian candidate",
@@ -149,6 +147,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "khigh dhiegh",
             "james edwards",
         ],
+        "Thriller",
     ),
     (
         "metropolis",
@@ -161,6 +160,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "rudolf kleinrogge",
             "heinrich george",
         ],
+        "Science Fiction",
     ),
     (
         "othello",
@@ -175,6 +175,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "doris dowling",
             "michael laurence",
         ],
+        "Drama",
     ),
     (
         "spartacus",
@@ -190,6 +191,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "tony curtis",
             "woody strode",
         ],
+        "Historical",
     ),
     (
         "a star is born",
@@ -202,12 +204,14 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "tommy noonan",
             "charles bickford",
         ],
+        "Musical",
     ),
     (
         "after the rehearsal",
         "ingmar bergman",
         1984,
         ["erland josephson", "ingrid thulin", "lena olin", "nadja palmstjerna-weiss"],
+        "Drama",
     ),
     (
         "amadeus",
@@ -222,6 +226,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "christine ebersole",
             "jeffrey jones",
         ],
+        "Drama",
     ),
     (
         "blood simple",
@@ -234,6 +239,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "m emmet walsh",
             "samm-art williams",
         ],
+        "Crime",
     ),
     (
         "chinatown",
@@ -249,6 +255,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "diane ladd",
             "roman polanski",
         ],
+        "Mystery",
     ),
     (
         "the cotton club",
@@ -263,6 +270,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "james remar",
             "fred gwynne",
         ],
+        "Crime",
     ),
     (
         "the crying game",
@@ -277,6 +285,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "breffini mckenna",
             "joe savino",
         ],
+        "Drama",
     ),
     (
         "the day of the jackal",
@@ -292,6 +301,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "olga georges-picot",
             "cyril cusack",
         ],
+        "Thriller",
     ),
     (
         "diva",
@@ -305,12 +315,14 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "jacques fabbri",
             "chantal deruaz",
         ],
+        "Crime",
     ),
     (
         "the dresser",
         "peter yates",
         1984,
         ["albert finney", "tom courtenay", "edward fox", "zena walker"],
+        "Drama",
     ),
     (
         "el norte",
@@ -323,6 +335,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "alicia del lago",
             "trinidad silva",
         ],
+        "Drama",
     ),
     (
         "the exorcist",
@@ -336,6 +349,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "kitty winn",
             "lee j cobb",
         ],
+        "Horror",
     ),
     (
         "a fish called wanda",
@@ -350,6 +364,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "tom georgeson",
             "patricia hayes",
         ],
+        "Comedy",
     ),
     (
         "flirting",
@@ -364,8 +379,9 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "josh picker",
             "kiri paramore",
         ],
+        "Drama",
     ),
-    ("gates of heaven", "errol morris", 1978, []),
+    ("gates of heaven", "errol morris", 1978, [], "Documentary"),
     (
         "house of games",
         "david mamet",
@@ -378,12 +394,14 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "j t walsh",
             "jack wallace",
         ],
+        "Crime",
     ),
     (
         "iceman",
         "fred schepisi",
         1984,
         ["timothy hutton", "john lone", "lindsay crouse"],
+        "Drama",
     ),
     (
         "jaws",
@@ -396,6 +414,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "lorraine gary",
             "murray hamilton",
         ],
+        "Thriller",
     ),
     (
         "johnny got his gun",
@@ -409,6 +428,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "donald sutherland",
             "eduard franz",
         ],
+        "Drama",
     ),
     (
         "local hero",
@@ -421,6 +441,7 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "fulton mckay",
             "denis lawson",
         ],
+        "Comedy",
     ),
     (
         "malcolm x",
@@ -434,5 +455,279 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "delroy lindo",
             "spike lee",
         ],
-    )
+        "Biography",
+    ),
+    (
+        "a clockwork orange",
+        "stanley kubrick",
+        1971,
+        [
+            "malcolm mcdowell",
+            "patrick magee",
+            "adrienne corri",
+            "warren clarke",
+            "michael bates",
+        ],
+        "Crime",
+    ),
+    (
+        "the deer hunter",
+        "michael cimino",
+        1978,
+        [
+            "robert de niro",
+            "christopher walken",
+            "meryl streep",
+            "john cazale",
+            "john savage",
+        ],
+        "Drama",
+    ),
+    (
+        "dial m for murder",
+        "alfred hitchcock",
+        1954,
+        [
+            "ray milland",
+            "grace kelly",
+            "robert cummings",
+            "john williams",
+            "anthony dawson",
+        ],
+        "Mystery",
+    ),
+    (
+        "do the right thing",
+        "spike lee",
+        1989,
+        [
+            "danny aiello",
+            "ossie davis",
+            "ruby dee",
+            "spike lee",
+            "bill nunn",
+        ],
+        "Drama",
+    ),
+    (
+        "eternal sunshine of the spotless mind",
+        "michel gondry",
+        2004,
+        [
+            "jim carrey",
+            "kate winslet",
+            "tom wilkinson",
+            "kirsten dunst",
+            "mark ruffalo",
+        ],
+        "Romance",
+    ),
+    (
+        "the french connection",
+        "william friedkin",
+        1971,
+        [
+            "gene hackman",
+            "roy scheider",
+            "fernando rey",
+            "tony lo bianco",
+            "marcel bozzuffi",
+        ],
+        "Action",
+    ),
+    (
+        "heat",
+        "michael mann",
+        1995,
+        [
+            "al pacino",
+            "robert de niro",
+            "val kilmer",
+            "jon voight",
+            "tom sizemore",
+        ],
+        "Crime",
+    ),
+    (
+        "jaws",
+        "steven spielberg",
+        1975,
+        [
+            "roy scheider",
+            "robert shaw",
+            "richard dreyfuss",
+            "lorraine gary",
+            "murray hamilton",
+        ],
+        "Thriller",
+    ),
+    (
+        "jurassic park",
+        "steven spielberg",
+        1993,
+        [
+            "sam neill",
+            "laura dern",
+            "jeff goldblum",
+            "richard attenborough",
+            "martin ferrero",
+        ],
+        "Adventure",
+    ),
+    (
+        "kill bill: vol. 1",
+        "quentin tarantino",
+        2003,
+        [
+            "uma thurman",
+            "david carradine",
+            "daryl hannah",
+            "michael madsen",
+            "lucy liu",
+        ],
+        "Action",
+    ),
+    (
+        "the last emperor",
+        "bernardo bertolucci",
+        1987,
+        [
+            "john lone",
+            "joan chen",
+            "peter o'toole",
+            "ruocheng ying",
+            "victor wong",
+        ],
+        "Biography",
+    ),
+    (
+        "the maltese falcon",
+        "john huston",
+        1941,
+        [
+            "humphrey bogart",
+            "mary astor",
+            "gladys george",
+            "peter lorre",
+            "barton maclane",
+        ],
+        "Film-Noir",
+    ),
+    (
+        "a nightmare on elm street",
+        "wes craven",
+        1984,
+        [
+            "heather langenkamp",
+            "johnny depp",
+            "robert englund",
+            "ronee blakley",
+            "amanda wyss",
+        ],
+        "Horror",
+    ),
+    (
+        "no country for old men",
+        "joel coen, ethan coen",
+        2007,
+        [
+            "tommy lee jones",
+            "javier bardem",
+            "josh brolin",
+            "woody harrelson",
+            "kelly macdonald",
+        ],
+        "Crime",
+    ),
+    (
+        "pulp fiction",
+        "quentin tarantino",
+        1994,
+        [
+            "john travolta",
+            "uma thurman",
+            "samuel l. jackson",
+            "bruce willis",
+            "tim roth",
+        ],
+        "Crime",
+    ),
+    (
+        "the shawshank redemption",
+        "frank darabont",
+        1994,
+        [
+            "tim robbins",
+            "morgan freeman",
+            "bob gunton",
+            "william sadler",
+            "clancy brown",
+        ],
+        "Drama",
+    ),
+    (
+        "the shining",
+        "stanley kubrick",
+        1980,
+        [
+            "jack nicholson",
+            "shelley duvall",
+            "danny lloyd",
+            "scatman crothers",
+            "barry nelson",
+        ],
+        "Horror",
+    ),
+    (
+        "star wars: episode iv - a new hope",
+        "george lucas",
+        1977,
+        [
+            "mark hamill",
+            "harrison ford",
+            "carrie fisher",
+            "alec guinness",
+            "peter cushing",
+        ],
+        "Sci-Fi",
+    ),
+    (
+        "taxi driver",
+        "martin scorsese",
+        1976,
+        [
+            "robert de niro",
+            "jodie foster",
+            "cybill shepherd",
+            "harvey keitel",
+            "albert brooks",
+        ],
+        "Crime",
+    ),
+    (
+        "the wizard of oz",
+        "victor fleming",
+        1939,
+        [
+            "judy garland",
+            "frank morgan",
+            "ray bolger",
+            "bert lahr",
+            "jack haley",
+        ],
+        "Adventure",
+    ),
+    (
+        "the silence of the lambs",
+        "jonathan demme",
+        1991,
+        [
+            "jodie foster",
+            "anthony hopkins",
+            "lawrence a. bonney",
+            "scott glenn",
+            "anthony heald",
+        ],
+        "Crime",
+    ),
 ]
